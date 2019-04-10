@@ -1,0 +1,4 @@
+
+SELECT student.name
+FROM student
+WHERE student.studentid = '12';

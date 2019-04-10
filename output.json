@@ -1,0 +1,24 @@
+{
+	"select": {
+		"column": "name",
+		"type": "[]"
+	},
+	"from": {
+		"table": "student"
+	},
+	"join": {
+	},
+	"where": {
+		"condition": [
+			{ "column": "studentid",
+			  "type": "None",
+			  "operator": "=",
+			  "value": "'12'"
+			}
+		]
+	},
+	"group_by": {
+	},
+	"select": {
+	},
+}
