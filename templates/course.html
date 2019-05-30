@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Course - SelectStar</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<h1><a href="/">SelectStar</a></h1>
+				<a href="#nav">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="/">Home</a></li>
+					<li><a href="/about">About</a></li>
+					<li><a href="/course">Course</a></li>
+					<li><a href="/signin">Task</a></li>
+					<li><a href="/custom">custom Feed In</a></li>
+					<li><a href="/signup">Sign Up</a></li>
+				</ul>
+			</nav>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+
+
+					<!-- <a href="#" class="image fit" style="height: 400px"><img src="static/images/30.png" alt="" /></a> -->
+
+					<div class="sidenav">
+						<br>
+						<a href="#Intro" id="Intro1">SQL Intro</a>
+						<a href="#Syntax" id="Syntax1">SQL Syntax</a>
+						<a href="#Select" id="Select1">SQL Select</a>
+						<a href="#Where" id="Where1">SQL Where</a>
+						<a href="#And" id="And1">SQL And, Or and Not</a>
+						<a href="#Order" id="Order1">SQL Order By</a>
+						<a href="#Null" id="Null1">SQL Null Values</a>
+						<a href="#Min" id="Min1">SQL Min and Max</a>
+						<a href="#Count" id="Count1">SQL Count</a>
+						<a href="#Sum" id="Sum1">SQL Sum & Avg</a>
+						<a href="#Like" id="Like1">SQL Like</a>
+						<a href="#In" id="In1">SQL In & Between</a>
+						<a href="#Aliases" id="Aliases1">SQL Aliases</a>
+						<a href="#Joins" id="Joins1">SQL Joins</a>
+						<a href="#Union" id="Union1">SQL Union</a>
+						<a href="#Group" id="Group1">SQL Group By</a>
+						<a href="#Having" id="Having1">SQL Having</a>
+						<a href="#Exists" id="Exists1">SQL Exists</a>
+						<br><br><br>
+					</div>
+					<div class="main">
+						<header class="major special">
+							<h2>About SQL</h2>
+							<!-- <p>"It's not wise to violate rules until you know how to observe them."</p> -->
+						</header>
+
+						<div id="Intro">
+							<h3>What is SQL?</h3>
+							<p>Structured Query Language (SQL) is a standard computer language for relational database management and data manipulation. SQL is used to query, insert, update and modify data. Most relational databases support SQL, which is an added benefit for database administrators (DBAs), as they are often required to support databases across several different platforms.</p>
+							<h4>What Can SQL do?</h4>
+							<p>
+								<li>SQL can execute queries against a database
+								<li>SQL can retrieve data from a database
+								<li>SQL can insert records in a database
+								<li>SQL can update records in a database
+								<li>SQL can delete records from a database
+								<li>SQL can create new databases
+								<li>SQL can create new tables in a database
+								<li>SQL can create stored procedures in a database
+								<li>SQL can create views in a database
+								<li>SQL can set permissions on tables, procedures, and views
+							</p>
+							<h4>Types of SQL Queries</h4>
+							<p><strong>DML(Data Modification Language):</strong>
+							Any SQL statement which is responsible to change the data and state of the own as a DML query. It includes queries which are related to insertion, selection(retrieval), updation and deletion.<br>
+							<strong>DDL(Data Definition Language):</strong>
+							Any SQL statement which is responsible for defining the state of the database is called a DDL query. It includes queries which consists of keywords like create, alter, drop which are used for creation, alteration and dropping of tables respectively.<br>
+							<strong>DCL(Data Control Language):</strong>
+							In Data Control Language(DCL), it defines the control over the data in the database. It has commands like grant (which is used to grant some privileges (rights) to some users) and revoke (which is used to revoke privileges from any user).<br>
+							<strong>TCL(Transaction Control Language):</strong>
+							In Transaction Control Language (TCL), the commands are used to manage the transactions in the database. These are used to manage the changes made by DML statements. It also allows the statements to be grouped together into logical transactions. It has commit, rollback and savepoint commands which are used for maintaining the consistency of the database.</p>
+						</div>
+
+						<div id="Syntax">
+							<h3>SQL Syntax</h3>
+							<p>Most of the actions you need to perform on a database are done with SQL statements.The following SQL statement selects all the records in the "Student" table : <br><strong>SELECT * FROM Student;</strong><br>SQL keywords are NOT case sensitive: select is the same as SELECT<br>Some database systems require a semicolon at the end of each SQL statement.Semicolon is the standard way to separate each SQL statement in database systems that allow more than one SQL statement to be executed in the same call to the server.
+							</p>
+							<h4>Some of The Most Important SQL Commands</h4>
+							<p>
+								<li>SELECT - extracts data from a database
+								<li>UPDATE - updates data in a database
+								<li>DELETE - deletes data from a database
+								<li>INSERT INTO - inserts new data into a database
+								<li>CREATE DATABASE - creates a new database
+								<li>ALTER DATABASE - modifies a database
+								<li>CREATE TABLE - creates a new table
+								<li>ALTER TABLE - modifies a table
+								<li>DROP TABLE - deletes a table
+								<li>CREATE INDEX - creates an index (search key)
+								<li>DROP INDEX - deletes an index
+							</p>
+						</div>
+
+						<div id="Select">
+							<h3>SQL SELECT Statement</h3>
+							<p>The SELECT statement is used to select data from a database. The data returned is stored in a result table, called the result-set. SELECT Syntax<br><strong>SELECT column1, column2, ...<br>FROM table_name;</strong><br>
+							The SELECT DISTINCT statement is used to return only distinct (different) values. Inside a table, a column often contains many duplicate values; and sometimes you only want to list the different (distinct) values.
+							SELECT DISTINCT Syntax<br><strong>SELECT DISTINCT column1, column2, ...<br>FROM table_name;</strong>
+							</p>
+						</div>
+
+						<div id="Where">
+							<h3>SQL WHERE Statement</h3>
+							<p>The WHERE clause is used to filter records.The WHERE clause is used to extract only those records that fulfill a specified condition. WHERE Syntax<br><strong>SELECT column1, column2, ...<br>FROM table_name<br>WHERE condition;</strong>
+							</p>
+						</div>
+
+						<div id="And">
+							<h3>The SQL AND, OR and NOT Operators</h3>
+							<p>The WHERE clause can be combined with AND, OR, and NOT operators.<br>The AND and OR operators are used to filter records based on more than one condition:
+								<li>The AND operator displays a record if all the conditions separated by AND are TRUE.
+								<li>The OR operator displays a record if any of the conditions separated by OR is TRUE.
+							<br>AND Syntax<br><strong>SELECT column1, column2, ...<br>FROM table_name<br>WHERE condition1 AND condition2 AND condition3...;</strong></p>
+							<p>OR Syntax<br><strong>SELECT column1, column2, ...<br>FROM table_name<br>WHERE condition1 OR condition2 OR condition3...;</strong></p>
+							<p>NOT Syntax<br><strong>SELECT column1, column2, ...<br>FROM table_name<br>WHERE NOT condition;</strong></p>
+						</div>
+
+						<div id="Order">
+							<h3>SQL ORDER BY Keyword</h3>
+							<p>The ORDER BY keyword is used to sort the result-set in ascending or descending order. The ORDER BY keyword sorts the records in ascending order by default. To sort the records in descending order, use the DESC keyword. ORDER BY Syntax<br><strong>SELECT column1, column2, ...<br>FROM table_name<br>ORDER BY column1, column2, ... ASC|DESC;</strong></p>
+						</div>
+
+						<div id="Null">
+							<h3>SQL NULL Values</h3>
+							<p>A field with a NULL value is a field with no value.If a field in a table is optional, it is possible to insert a new record or update a record without adding a value to this field. Then, the field will be saved with a NULL value.<br><strong>Note:</strong> A NULL value is different from a zero value or a field that contains spaces. A field with a NULL value is one that has been left blank during record creation!<br>It is not possible to test for NULL values with comparison operators, such as =, <, or < >.We will have to use the IS NULL and IS NOT NULL operators instead.<br>IS NULL Syntax<br><strong>SELECT column1, column2 <br>FROM table_name<br>WHERE column_name IS NULL;</strong><br>IS NOT NULL Syntax<br><strong>SELECT column1, column2 <br>FROM table_name<br>WHERE column_name IS NOT NULL;</strong></p>
+						</div>
+
+						<div id="Min">
+							<h3>SQL MIN() and MAX() Functions</h3>
+							<p>The MIN() function returns the smallest value of the selected column.<br>The MAX() function returns the largest value of the selected column.<br>MIN() Syntax<br><strong>SELECT MIN(column_name)<br>FROM table_name<br>WHERE condition;</strong><br>MAX() Syntax<br><strong>SELECT MAX(column_name)<br>FROM table_name<br>WHERE condition;</strong></p>
+						</div>
+
+						<div id="Count">
+							<h3>SQL COUNT() Functions</h3>
+							<p>The COUNT() function returns the number of rows that matches a specified criteria. COUNT() Syntax<br><strong>SELECT COUNT(column_name)<br>FROM table_name<br>WHERE condition;</strong></p>
+						</div>
+
+						<div id="Sum">
+							<h3>SQL SUM() and AVG() Functions</h3>
+							<p>The AVG() function returns the average value of a numeric column.<br>The SUM() function returns the total sum of a numeric column.<br>SUM() Syntax<br><strong>SELECT SUM(column_name)<br>FROM table_name<br>WHERE condition;</strong><br>AVG()<br><strong>SELECT AVG(column_name)<br>FROM table_name<br>WHERE condition;</strong></p>
+						</div>
+
+						<div id="Like">
+							<h3>SQL LIKE Operator</h3>
+							<p>The LIKE operator is used in a WHERE clause to search for a specified pattern in a column. There are two wildcards often used in conjunction with the LIKE operator:
+								<li>% - The percent sign represents zero, one, or multiple characters</li>
+								<li>_ - The underscore represents a single character
+								<br><strong>Note:</strong> MS Access uses an asterisk (*) instead of the percent sign (%), and a question mark (?) instead of the underscore (_).The percent sign and the underscore can also be used in combinations!
+								<br>LIKE Syntax<br><strong>SELECT column1, column2, ...<br>FROM table_name<br>WHERE columnN LIKE pattern;</strong>
+							</p>
+							<p><strong>LIKE Operator Description</strong>
+									<li>WHERE CustomerName LIKE 'a%' - Finds any values that start with "a"
+									<li>WHERE CustomerName LIKE '%a' - Finds any values that end with "a"
+									<li>WHERE CustomerName LIKE '%or%' - Finds any values that have "or" in any position
+									<li>WHERE CustomerName LIKE '_r%' - Finds any values that have "r" in the second position
+									<li>WHERE CustomerName LIKE 'a_%_%' - Finds any values that start with "a" and are at least 3 characters in length
+									<li>WHERE ContactName LIKE 'a%o' - Finds any values that start with "a" and ends with "o"
+							</p>
+						</div>
+
+						<div id="In">
+							<h3>SQL IN and BETWEEN Operator</h3>
+							<p>The IN operator allows you to specify multiple values in a WHERE clause.The IN operator is a shorthand for multiple OR conditions.<br>IN Syntax<br><strong>SELECT column_name(s)<br>FROM table_name<br>WHERE column_name IN (value1, value2, ...);</strong><br>or<br><strong>SELECT column_name(s)<br>FROM table_name<br>WHERE column_name IN ( SELECT STATEMENT);</strong></p>
+							<p>The BETWEEN operator selects values within a given range. The values can be numbers, text, or dates.The BETWEEN operator is inclusive: begin and end values are included.<br>BETWEEN Syntax<br><strong>SELECT column_name(s)<br>FROM table_name<br>WHERE column_name BETWEEN value1 AND value2;</strong>
+							</p>
+						</div>
+
+						<div id="Aliases">
+							<h3>SQL Aliases</h3>
+							<p>SQL aliases are used to give a table, or a column in a table, a temporary name. Aliases are often used to make column names more readable. An alias only exists for the duration of the query.<br>Alias Column Syntax<br><strong>SELECT column_name AS alias_name<br>FROM table_name;</strong><br>Alias Table Syntax<br><strong>SELECT column_name(s)<br>FROM table_name AS alias_name;</strong> </p>
+						</div>
+
+						<div id="Joins">
+							<h3>SQL Joins</h3>
+							<p>A JOIN clause is used to combine rows from two or more tables, based on a related column between them.Here are the different types of the JOINs in SQL:
+								<li><strong>INNER JOIN:</strong> Returns records that have matching values in both tables
+								<li><strong>LEFT OUTER JOIN:</strong> Return all records from the left table, and the matched records from the right table
+								<li><strong>RIGHT OUTER JOIN:</strong> Return all records from the right table, and the matched records from the left table
+								<li><strong>FULL OUTER JOIN:</strong> Return all records when there is a match in either left or right table</li>
+								<br>INNER JOIN Syntax<br><strong>SELECT column_name(s)<br>FROM table1<br>INNER JOIN table2<br>ON table1.column_name = table2.column_name<br>WHERE condition;</strong><br>
+								<br>LEFT JOIN Syntax<br><strong>SELECT column_name(s)<br>FROM table1<br>LEFT JOIN table2<br>ON table1.column_name = table2.column_name<br>WHERE condition;</strong><br>
+								<br>RIGHT JOIN Syntax<br><strong>SELECT column_name(s)<br>FROM table1<br>RIGHT JOIN table2<br>ON table1.column_name = table2.column_name<br>WHERE condition;</strong><br>
+								<br>FULL OUTER JOIN Syntax<br><strong>SELECT column_name(s)<br>FROM table1<br>FULL OUTER JOIN table2<br>ON table1.column_name = table2.column_name<br>WHERE condition;</strong><br></p>
+						</div>
+
+						<div id="Union">
+							<h3>SQL UNION Operator</h3>
+							<p>The UNION operator is used to combine the result-set of two or more SELECT statements. Each SELECT statement within UNION must have the same number of columns.The columns must also have similar data types. The columns in each SELECT statement must also be in the same order.<br>UNION Syntax<br><strong>SELECT column_name(s) FROM table1<br>UNION<br>SELECT column_name(s) FROM table2;</strong><br>The UNION operator selects only distinct values by default. To allow duplicate values, use UNION ALL:<br><strong>SELECT column_name(s) FROM table1<br>UNION ALL<br>SELECT column_name(s) FROM table2;</strong></p>
+						</div>
+
+						<div id="Group">
+							<h3>SQL GROUP BY Statement</h3>
+							<p>The GROUP BY statement is often used with aggregate functions (COUNT, MAX, MIN, SUM, AVG) to group the result-set by one or more columns.<br>GROUP BY Syntax<br><strong>SELECT column_name(s)<br>FROM table_name<br>WHERE condition<br>GROUP BY column_name(s)<br>ORDER BY column_name(s);</strong> </p>
+						</div>
+						
+						<div id="Having">
+							<h3>SQL HAVING Clause</h3>
+							<p>The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions.
+								<br>HAVING Syntax<br><strong>SELECT column_name(s)<br>FROM table_name<br>WHERE condition<br>GROUP BY column_name(s)<br>HAVING condition<br>ORDER BY column_name(s);</strong></p>
+						</div>
+
+						<div id="Exists">
+							<h3>SQL EXISTS Operator</h3>
+							<p>The EXISTS operator is used to test for the existence of any record in a subquery.The EXISTS operator returns true if the subquery returns one or more records.<br>EXISTS Syntax<br><strong>SELECT column_name(s)<br>FROM table_name<br>WHERE EXISTS<br>(SELECT column_name FROM table_name WHERE condition);</strong> </p>
+						</div>
+
+
+					</div>
+				</div>
+			</section>
+
+					<!-- Footer -->
+						<footer id="footer">
+							<div class="inner">
+								<ul class="icons">
+									<li><a href="#" class="icon fa-facebook">
+										<span class="label">Facebook</span>
+									</a></li>
+									<li><a href="#" class="icon fa-twitter">
+										<span class="label">Twitter</span>
+									</a></li>
+									<li><a href="#" class="icon fa-instagram">
+										<span class="label">Instagram</span>
+									</a></li>
+									<li><a href="#" class="icon fa-linkedin">
+										<span class="label">LinkedIn</span>
+									</a></li>
+								</ul>
+								<ul class="copyright">
+									<li>&copy; SelectStar</li>
+									<li><a href="http://unsplash.com">Programmers are made, not born.</a>.</li>
+								</ul>
+							</div>
+						</footer>
+
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='js/skel.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='js/util.js') }}"></script>
+			<script src="{{ url_for('static',filename='js/main.js') }}"></script>
+
+	</body>
+</html>

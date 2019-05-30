@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Task - SelectStar</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<h1><a href="/index1">SelectStar</a></h1>
+				<ul class="dropdown button"><i class="icon fa-user">  </i><a href="#">{{username}}</a>
+				    <div class="dropdown-content">
+				    	<li><a href="#">Profile Edit</a></li>
+				      	<li><a href="#">Dashboard</a></li>
+				      	<li><a href="/logout">Logout</a></li>
+					</div>
+				</ul>
+				<a href="#nav">Menu</a>
+			</header>
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="/index1">Home</a></li>
+					<li><a href="/about1">About</a></li>
+					<li><a href="/course1">Course</a></li>
+					<li><a href="/task">Task</a></li>
+					<li><a href="/custom1">custom Feed In</a></li>
+				</ul>
+			</nav>
+
+		<!-- Three -->
+			<section id="main" class="wrapper">
+				<div class="container">
+					<header class="major special">
+						<h2>Task</h2>
+						<p>"Queries are living artifacts that change over time."</p>
+					</header>
+					<p>Hello, Welcome to <strong>SelectStar!</strong> <br>
+						We are here to make you an expert in writing SQL queries.
+						Follow the instructions to achieve the maximum benefit from this platform:<br>
+						1. We have designed our course page so that you can understand each and every concept clearly.<br>
+						2. Complete each topic on the course page before proceeding to writing queries.<br>
+						3. Once you are done with reading and understanding all the topics which are covered on the course page, you are all set to write the queries.<br>
+						4. Before writing queries, it is very important to understand the schema. Hence we recommend you to understand the given schema before reading the question and writing a query and you can choose any database from the below mentioned list of database.<br>
+						5. Once you have understood the schema, our platform will provide you with question based on your profile.<br>
+						6. You can click the "Hint" button if you are facing any difficulty in writing query.<br>
+						7. On submtting the query our platform will your answer, and if it is correct then you will be prompted a new question; else our platform will provide you with hints to understand your mistakes.<br>
+						8. You can check your progress in profile section, which will be updated as and when you write the queries correctly.<br>
+
+						We have developed this platform to make you a wizard of writing queries, hope you take advantage of this. 
+					</p>
+ 						<form action = "http://localhost:5000/db" method = "post">
+							<ul class="actions">
+								<li><a href="/db" id="db1"><input type="submit" name="DB" value="School" class="button special"></a></li>
+								<li><a href="/db" id="db2"><input type="submit" name="DB" value="Retail Store" class="button"></a></li>
+								<li><a href="/db" id="db3"><input type="submit" name="DB" value="Restaurant" class="button alt"></li>
+								<li><a href="/db" id="db4"><input type="submit" name="DB" value="Hospital" class="button special"></a></li>
+								<li><a href="/db" id="db5"><input type="submit" name="DB" value="Taxi Booking" class="button"></a></li>
+								<li><a href="/db" id="db6"><input type="submit" name="DB" value="Book Supply" class="button alt"></a></li>
+								<li><a href="/db" id="Custom"><input type="submit" name="DB" value="Feed In" class="button special"></a></li>
+							</ul>
+						</form> 
+					<div class="flex flex-2">
+						<article>
+							<!-- <div class="image fit">
+								<img src="static/images/db.jpg" alt="Pic 01" />
+							</div> -->
+							<header>
+								<h3>Data Schema</h3>
+							</header>
+							{% for row in data %}
+			    			<p>{{row[0]}}</p>
+			    				<ul>
+			        				{% for element in row[1:] %}
+			            			<li>{{element|join(', ')}}</li>
+			        				{% endfor %}
+			   			 		</ul>
+							{% endfor %}
+						</article>
+						<article>
+							<!-- <div class="image fit">
+								<img src="static/images/question.jpg" alt="" />
+							</div> -->
+							<header>
+								<h3>Question | Query</h3>
+							</header>
+							<h4>{{ques}}</h4>
+							<footer>
+								<a href="/next_ques" class="button special">Next</a>
+							</footer>
+						</article>
+					</div>
+					<div class="flex flex-2">
+						<article>
+							<!-- <div class="image fit">
+								<img src="static/images/answer.jpg" alt="Pic 01" />
+							</div> -->
+							<header>
+								<h3>Input Answer</h3>
+							</header>
+							<form method="post" action="http://localhost:5000/submit" enctype='multipart/form-data'>
+								<div class="row uniform 50%">
+									<input type="text" name="answer" id="name" placeholder="Write Your Query Here." />
+								</div>
+								<div class="12u$">
+									<ul class="actions">
+										<li><input type="submit" name="ans" value="Submit" class="special" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</div>
+							
+						</article>
+						<article>
+							<!-- <div class="image fit">
+								<img src="static/images/output.jpg" alt="" />
+							</div> -->
+							<header>
+								<h3>Output | Feedback | Hint</h3>
+							</header>
+							<p>{{text|safe}}</p>
+							<footer>					
+								<div class="12u$">
+									<ul class="actions">
+										<li><input type="submit" value="Hint" name="ans" class="special" /></li>
+										<li><a href="/answer" class="button special">Answer</a></li>
+									</ul>
+								</div>
+							</footer>
+						</form>
+						</article>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-facebook">
+							<span class="label">Facebook</span>
+						</a></li>
+						<li><a href="#" class="icon fa-twitter">
+							<span class="label">Twitter</span>
+						</a></li>
+						<li><a href="#" class="icon fa-instagram">
+							<span class="label">Instagram</span>
+						</a></li>
+						<li><a href="#" class="icon fa-linkedin">
+							<span class="label">LinkedIn</span>
+						</a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; SelectStar</li>
+						<li><a href="http://unsplash.com">Programmers are made, not born.</a>.</li>
+					</ul>
+				</div>
+			</footer>
+
+
+		<!-- Scripts -->
+		<script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/skel.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/util.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/main.js') }}"></script>
+
+	</body>
+</html>

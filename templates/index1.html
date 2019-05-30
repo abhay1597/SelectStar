@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>SelectStar</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<h1><a href="/index1">SelectStar</a></h1>
+				<ul class="dropdown button"><i class="icon fa-user">  </i><a href="#">{{username}}</a>
+				    <div class="dropdown-content">
+				    	<li><a href="#">Profile Edit</a></li>
+				      	<li><a href="#">Dashboard</a></li>
+				      	<li><a href="/logout">Logout</a></li>
+					</div>
+				</ul>
+				<a href="#nav">Menu</a>
+			</header>
+
+
+		<!-- nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="/index1">Home</a></li>
+					<li><a href="/about1">About</a></li>
+					<li><a href="/course1">Course</a></li>
+					<li><a href="/task">Task</a></li>
+					<li><a href="/custom1">custom Feed In</a></li>
+				</ul>
+			</nav>
+
+		<!-- Banner -->
+			<section id="banner">
+				<i class="icon fa-star"></i>
+				<h2>To be the next baker street boy,<br>you need to fetch the data correctly</h2>
+				<p>SelectStar is an online SQL Course that is 80% based on practice</p>
+				<ul class="actions">
+					<li><a href="#" class="button big special">Start Learning</a></li>
+				</ul>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="wrapper style1">
+				<div class="inner">
+					<article class="feature left">
+						<span class="image"><img src="/static/images/24.png" alt="" /></span>
+						<div class="content">
+							<h2>The Course is 80% Practice</h2>
+							<p>There are tons of good books on the Internet, but you won't become a SQL Developer by reading books. To become a SQL Developer, you need to write a lot of Query. SelectStar is an online SQL course consisting of 80% practice. That's precisely what you need to become a SQL Developer|DBA..</p>
+						</div>
+					</article>
+					<article class="feature right">
+						<span class="image"><img src="/static/images/26.png" alt="" /></span>
+						<div class="content">
+							<h2>500 Practical Tasks</h2>
+							<p>How many hands-on tasks should be in the perfect Java course? 10, 20, 50? The SelectStar course has 500 practical tasks of increasing complexity. The tasks are small, but there are lots of them (lots and lots). Just enough to give you the experience you need to get a job..</p>
+						</div>
+					</article>
+					<article class="feature left">
+						<span class="image"><img src="/static/images/22.png" alt="" /></span>
+						<div class="content">
+							<h2>Solutions Checking within Seconds.</h2>
+							<p>Sometimes it takes a whole eternity for your teacher to check your assignments and give you the results. We changed that. Don’t waste your time waiting for checking your solution. With our All Mighty virtual mentor all your solutions will be checked in a blink of an eye!</p>
+						</div>
+					</article>
+					<article class="feature right">
+						<span class="image"><img src="/static/images/25.png" alt="" /></span>
+						<div class="content">
+							<h2>Top-Notch Teaching Methods</h2>
+							<p>Studying shouldn’t be boring! That’s why we use the newest techniques that make your learning easier, more interesting, and productive: visualization, storytelling, motivation, gaming, and two dozen of other technologies that you have not even heard of. Sounds intriguing, huh?</p>
+						</div>
+					</article>
+					<article class="feature left">
+						<span class="image"><img src="/static/images/23.png" alt="" /></span>
+						<div class="content">
+							<h2>100+ Hours of Quering Experience</h2>
+							<p>The SQL course is divided into 10 levels. You can get to the next level only if you have completed most of the tasks in the current one. The tasks start small and easy, and progress to big and very useful. Your brain will get an excellent work-out! Anyone who reaches the end will gain 100+ hours of practical experience. That's a serious bid for victory. And for employment.</p>
+						</div>
+					</article>
+					<article class="feature right">
+						<span class="image"><img src="/static/images/27.png" alt="" /></span>
+						<div class="content">
+							<h2>Train Your Quering Skills in SelectStar Whenever You Need</h2>
+							<p>The course is totally self-paced. You don’t have to wait a few weeks or months until the group is gathered and the course begins. Just click on the button "Start learning", and dive in the fascinating world of SQL!</p>
+						</div>
+					</article>
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper special">
+				<div class="inner">
+					<ul class="actions">
+						<li><a href="#" class="button big alt">Start Learning</a></li>
+					</ul>
+				</div>
+			</section>
+
+		<!-- Four -->
+			<section id="four" class="wrapper style2 special">
+				<div class="inner">
+					<header class="major narrow">
+						<h2>Get in touch</h2>
+					</header>
+					<form action="#" method="POST">
+						<div class="container 75%">
+							<div class="row uniform 50%">
+								<div class="6u 12u$(xsmall)">
+									<input name="name" placeholder="Name" type="text" />
+								</div>
+								<div class="6u$ 12u$(xsmall)">
+									<input name="email" placeholder="Email" type="email" />
+								</div>
+								<div class="12u$">
+									<textarea name="message" placeholder="Message" rows="4"></textarea>
+								</div>
+							</div>
+						</div>
+						<ul class="actions">
+							<li><input type="submit" class="special" value="Submit" /></li>
+							<li><input type="reset" class="alt" value="Reset" /></li>
+						</ul>
+					</form>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-facebook">
+							<span class="label">Facebook</span>
+						</a></li>
+						<li><a href="#" class="icon fa-twitter">
+							<span class="label">Twitter</span>
+						</a></li>
+						<li><a href="#" class="icon fa-instagram">
+							<span class="label">Instagram</span>
+						</a></li>
+						<li><a href="#" class="icon fa-linkedin">
+							<span class="label">LinkedIn</span>
+						</a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; SelectStar</li>
+						<li><a href="http://unsplash.com">Programmers are made, not born.</a>.</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='js/skel.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='js/util.js') }}"></script>
+			<script src="{{ url_for('static',filename='js/main.js') }}"></script>
+
+	</body>
+</html>

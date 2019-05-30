@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Custom - SelectStar</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<h1><a href="/index1">SelectStar</a></h1>
+				<ul class="dropdown button"><i class="icon fa-user">  </i><a href="#">{{username}}</a>
+				    <div class="dropdown-content">
+				    	<li><a href="#">Profile Edit</a></li>
+				      	<li><a href="#">Dashboard</a></li>
+				      	<li><a href="/logout">Logout</a></li>
+					</div>
+				</ul>
+				<a href="#nav">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="/index1">Home</a></li>
+					<li><a href="/about1">About</a></li>
+					<li><a href="/course1">Course</a></li>
+					<li><a href="/task">Task</a></li>
+					<li><a href="/custom1">custom Feed In</a></li>
+				</ul>
+			</nav>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+
+					<header class="major special">
+						<h2>Feed In</h2>
+						<p>"If it's useful to me, it's useful to others."</p>
+					</header>
+
+					<a href="#" class="image fit"><img src="static/images/feed1.jpg" alt="" /></a>
+					<p>
+						<h3>Note: </h3>
+						<li>Details of crime scene (Database) should only be in from of .sql file.</li>
+						<li>Enter the Question you want answer for in Natural Language.</li> 
+					</p>
+					<h3>Form</h3>
+						<form method="post" action="http://localhost:5000/upload" enctype='multipart/form-data'>
+							<div class="row uniform 50%">
+								<div class="12u 12u$(xsmall)">
+									<input type="text" name="question" id="name" value="" placeholder="Enter the input question" />
+								</div>
+								<div class="12u$ 12u$(xsmall)">
+									<input type="file" name="file1" id="email" value="" placeholder="crime scene details" />
+								</div>
+								<div class="12u$">
+									<ul class="actions">
+										<li><input type="submit" value="upload" class="special" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					<h3>Output | Feedback</h3>
+					<p>{{text|safe}}</p>
+				</div>		
+			</section>
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-facebook">
+							<span class="label">Facebook</span>
+						</a></li>
+						<li><a href="#" class="icon fa-twitter">
+							<span class="label">Twitter</span>
+						</a></li>
+						<li><a href="#" class="icon fa-instagram">
+							<span class="label">Instagram</span>
+						</a></li>
+						<li><a href="#" class="icon fa-linkedin">
+							<span class="label">LinkedIn</span>
+						</a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; SelectStar</li>
+						<li><a href="http://unsplash.com">Programmers are made, not born.</a>.</li>
+					</ul>
+				</div>
+			</footer>
+
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='js/skel.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='js/util.js') }}"></script>
+			<script src="{{ url_for('static',filename='js/main.js') }}"></script>
+
+	</body>
+</html>
