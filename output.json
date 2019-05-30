@@ -1,24 +1,25 @@
 {
 	"select": {
-		"column": "name",
-		"type": "[]"
+		"columns": [
+			{ "column": "staffid",
+			  "type": "[]"
+			},
+			{ "column": "name",
+			  "type": "[]"
+			}
+		]
 	},
 	"from": {
-		"table": "student"
+		"table": "staff"
 	},
 	"join": {
 	},
 	"where": {
-		"condition": [
-			{ "column": "studentid",
-			  "type": "None",
-			  "operator": "=",
-			  "value": "'12'"
-			}
-		]
 	},
 	"group_by": {
 	},
 	"select": {
+		"column": "staff.salary",
+		"order": "ASC"
 	},
 }

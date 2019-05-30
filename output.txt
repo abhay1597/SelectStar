@@ -1,4 +1,4 @@
 
-SELECT student.name
-FROM student
-WHERE student.studentid = '12';
+SELECT staff.staffid, staff.name
+FROM staff
+ORDER BY staff.salary ASC;
